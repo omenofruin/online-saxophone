@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Vibe Saxophone - Pro Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay" id="start-overlay">
+        <div class="welcome-card">
+            <h1 class="glow-text">REAL VIBE SAX</h1>
+            <p id="loading-msg">실제 색소폰 샘플을 불러오는 중입니다...</p>
+            <button id="start-btn" style="display:none;">START PERFORMANCE</button>
+            <div id="loader-bar-container"><div id="loader-bar"></div></div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">🎷 REAL SAX PRO</div>
+            <div class="current-instrument">
+                <span id="inst-name">Alto Saxophone</span>
+                <small id="inst-range">Real Sampled Engine</small>
+            </div>
+        </header>
+
+        <main>
+            <div class="instrument-selector">
+                <div class="inst-btn" data-id="1"><span>1</span> Sopranino</div>
+                <div class="inst-btn" data-id="2"><span>2</span> Soprano</div>
+                <div class="inst-btn active" data-id="3"><span>3</span> Alto</div>
+                <div class="inst-btn" data-id="4"><span>4</span> Tenor</div>
+                <div class="inst-btn" data-id="5"><span>5</span> Baritone</div>
+                <div class="inst-btn" data-id="6"><span>6</span> Bass</div>
+                <div class="inst-btn" data-id="7"><span>7</span> Contrabass</div>
+                <div class="inst-btn" data-id="8"><span>8</span> Subcontrabass</div>
+            </div>
+
+            <div class="saxophone-visual">
+                <div id="octave-lamp">OCTAVE KEY ACTIVE</div>
+                <div class="keys-layout">
+                    <div class="key-unit"><div class="k-label">A</div><div class="k-circle white" data-note="C">C</div><div class="k-circle black" data-note="C#">W</div></div>
+                    <div class="key-unit"><div class="k-label">S</div><div class="k-circle white" data-note="D">D</div><div class="k-circle black" data-note="D#">E</div></div>
+                    <div class="key-unit"><div class="k-label">D</div><div class="k-circle white" data-note="E">E</div></div>
+                    <div class="key-unit"><div class="k-label">F</div><div class="k-circle white" data-note="F">F</div><div class="k-circle black" data-note="F#">T</div></div>
+                    <div class="key-unit"><div class="k-label">G</div><div class="k-circle white" data-note="G">G</div><div class="k-circle black" data-note="G#">Y</div></div>
+                    <div class="key-unit"><div class="k-label">H</div><div class="k-circle white" data-note="A">A</div><div class="k-circle black" data-note="A#">U</div></div>
+                    <div class="key-unit"><div class="k-label">J</div><div class="k-circle white" data-note="B">B</div></div>
+                    <div class="key-unit"><div class="k-label">K</div><div class="k-circle white" data-note="C" data-next-octave="true">C↑</div></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="shortcuts">
+                [A-K] Play | [Shift] Octave Key | [1-8] Change Sax | REAL SAMPLES LOADED
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

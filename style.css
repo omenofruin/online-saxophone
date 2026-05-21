@@ -1,0 +1,83 @@
+:root {
+    --gold: #d4af37;
+    --dark-gold: #8b6b00;
+    --bg: #050505;
+    --surface: #111;
+    --text: #ddd;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s;
+}
+
+.glow-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    margin-bottom: 20px;
+}
+
+#loader-bar-container {
+    width: 300px; height: 4px; background: #333; margin: 20px auto; border-radius: 2px;
+}
+#loader-bar {
+    width: 0%; height: 100%; background: var(--gold); border-radius: 2px; transition: width 0.3s;
+}
+
+#start-btn {
+    background: var(--gold); color: #000; border: none; padding: 15px 50px;
+    font-size: 1.1rem; font-weight: bold; cursor: pointer; border-radius: 5px;
+}
+
+.app-container {
+    width: 95vw; height: 90vh; background: var(--surface); border-radius: 10px;
+    display: flex; flex-direction: column; box-shadow: 0 0 100px #000;
+}
+
+header { padding: 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
+#inst-name { font-size: 2.5rem; font-weight: 700; color: #fff; display: block; }
+#inst-range { color: var(--gold); font-size: 1rem; }
+
+.instrument-selector { display: flex; justify-content: center; background: #080808; padding: 15px; gap: 8px; }
+.inst-btn { padding: 12px 20px; background: #1a1a1a; border-radius: 4px; font-size: 0.85rem; cursor: pointer; transition: 0.2s; border: 1px solid #333; }
+.inst-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+
+main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.saxophone-visual {
+    position: relative; padding: 100px 80px;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    border-radius: 150px; border: 3px solid #222;
+}
+
+#octave-lamp { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); font-size: 0.8rem; color: #333; font-weight: bold; }
+#octave-lamp.active { color: #ff0000; text-shadow: 0 0 15px #ff0000; }
+
+.keys-layout { display: flex; gap: 25px; align-items: flex-end; }
+.key-unit { display: flex; flex-direction: column; align-items: center; gap: 15px; position: relative; }
+.k-label { font-size: 0.8rem; color: #555; }
+.k-circle { width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; cursor: pointer; transition: 0.05s; font-size: 1.2rem; }
+.k-circle.white { background: #eee; color: #000; box-shadow: 0 8px 0 #999; }
+.k-circle.black { width: 45px; height: 45px; background: #222; color: #fff; font-size: 0.9rem; box-shadow: 0 5px 0 #000; position: absolute; top: -100px; }
+.k-circle.active { transform: translateY(6px); box-shadow: 0 2px 0 #000 !important; background: var(--gold) !important; color: #000 !important; }
+
+footer { padding: 25px; text-align: center; color: #444; border-top: 1px solid #222; }
